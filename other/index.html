@@ -101,13 +101,12 @@ $(document).ready(function(e) {
 			addText("作燚倐");
 		}else if(t==2){
 			addText("哥<br/><span style=\"font-size: 24px;\"><span>既然来了</span><br/><span>回去的时候</span><br/><span>点个赞和关注呗</span><br/><span>这是我第1次求你</span><br/><span>我就不信你能让我求你"+count+"次</span><span>")
-		}else if(t>=count+1&&t<count+overss.length+1){
+		}else if(t>=count+1&&t<count+overss.length){
 			addText(overss[oindex++]);
 		}else if(t==count+overss.length){
 			window.location="https://qm.qq.com/cgi-bin/qm/qr?k=BwJA4pT_vj_f3OdS7ztwuNzReTxZVCXe";
 			addText(overss[oindex]);
 		}else if(t>=count+overss.length){
-			
 			return;
 		}
 		
