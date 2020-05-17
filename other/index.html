@@ -85,7 +85,7 @@ $(document).ready(function(e) {
 	);
 	let oindex=0;
 	const overss=[
-		"行<br/>你厉害真点到了"+count+"次<br/>有本事再点一次啊",
+		"行<br/>你厉害<br/>真点到了"+count+"次<br/>有本事再点一次啊",
 		"哎!真点啊",
 		"我开玩笑的",
 		"既然这样我倒要加下你",
@@ -103,7 +103,7 @@ $(document).ready(function(e) {
 		}else if(t>=count+1&&t<count+overss.length+1){
 			addText(overss[oindex++]);
 		}else if(t==count+overss.length+1){
-			window.location="https://qm.qq.com/cgi-bin/qm/qr?k=BwJA4pT_vj_f3OdS7ztwuNzReTxZVCXe";
+			window.open("https://qm.qq.com/cgi-bin/qm/qr?k=BwJA4pT_vj_f3OdS7ztwuNzReTxZVCXe","_blank");
 		}else if(t>count+overss.length+1){
 			return;
 		}
