@@ -53,32 +53,27 @@ div {
 // 	window.location="index2.html";
 // }
 //	background: #f3961c;
-
-let tindex=1;
+const count=1000;
+//let tindex=-2;
+let t=0;
 $(document).ready(function(e) {
 	
 	
 	function addText(text){
-		$(".content").append("<div class=\"tittle\" id=\"t-"+(tindex++)+"\"><table width=\"100%\" border=\"0\" height=\"100%\"><tbody><tr><td align=\"center\"><span class=\"big\">"+text+"</span></td></tr></tbody></table></div>");
+		t++;
+		$(".content").append("<div class=\"tittle\" id=\"t-"+t+"\"><table width=\"100%\" border=\"0\" height=\"100%\"><tbody><tr><td align=\"center\"><span class=\"big\">"+text+"</span></td></tr></tbody></table></div>");
 	}
 	function addTexts(texts){
 		for(let i=0;i<texts.length;i++){
 			addText(texts[i]);
 		}
 	}
-	
-	
-	addTexts([
-		"点击屏幕继续",
-		"作燚倐",
-	]);
-	
-	
+	addText("点击屏幕继续");
 	
 	
 	$(document).scrollTop(300); /*移动滚动条到最下方*/
-	//timer=setInterval("$.change()",6000);
-	t=1;
+	//timer=setInterval("$.change()",10000);
+	
 	$("#t-"+t).fadeIn();
 	
 	$(document).click(
@@ -88,16 +83,36 @@ $(document).ready(function(e) {
 		$.change();
 		}
 	);
-	
+	let oindex=0;
+	const overss=[
+		"行<br/>你厉害真点到了"+count+"次<br/>有本事再点一次啊",
+		"哎!真点啊",
+		"我开玩笑的",
+		"既然这样我倒要加下你",
+		"看下你为什么这么执着"
+	];
 	/*切换*/
 	$.change=function(){
-		t++;
-		if(t<=$(".tittle").length){
-			$(".tittle").slideUp(1500).fadeOut();
-			$("#t-"+t).slideDown(1500).fadeIn();
-			//addText("哥\n既然来了\n回去的时候\n个赞和关注呗\n这是我第"+(tindex-2)+"次求你");
-			addText("哥<br/><span style=\"font-size: 24px;\"><span>既然来了</span><br/><span>回去的时候</span><br/><span>点个赞和关注呗</span><br/><font>这是我第"+(tindex-2)+"次求你</font><span>");
+		
+		if(t>=3&&t<count+1){
+			addText("哥<br/><span style=\"font-size: 24px;\"><span>既然来了</span><br/><span>回去的时候</span><br/><span>点个赞和关注呗</span><br/><span>这是我第"+(t-1)+"次求你</span><span>");
+		}else if(t==1){
+			addText("作燚倐");
+		}else if(t==2){
+			addText("哥<br/><span style=\"font-size: 24px;\"><span>既然来了</span><br/><span>回去的时候</span><br/><span>点个赞和关注呗</span><br/><span>这是我第1次求你</span><br/><span>我就不信你能让我求你"+count+"次</span><span>")
+		}else if(t>=count+1&&t<count+overss.length+1){
+			addText(overss[oindex++]);
+		}else if(t==count+overss.length+1){
+			window.location="https://qm.qq.com/cgi-bin/qm/qr?k=BwJA4pT_vj_f3OdS7ztwuNzReTxZVCXe";
 		}
+		
+		
+		$(".tittle").slideUp(1500).fadeOut();
+		$("#t-"+t).slideDown(1500).fadeIn();
+		$("#t-"+(t-5)).remove();
+			
+			
+			
 	}
 
 });
