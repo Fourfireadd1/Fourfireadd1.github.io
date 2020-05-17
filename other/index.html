@@ -53,7 +53,7 @@ div {
 // 	window.location="index2.html";
 // }
 //	background: #f3961c;
-const count=1000;
+const count=15;
 //let tindex=-2;
 let t=0;
 $(document).ready(function(e) {
@@ -104,6 +104,8 @@ $(document).ready(function(e) {
 			addText(overss[oindex++]);
 		}else if(t==count+overss.length+1){
 			window.location="https://qm.qq.com/cgi-bin/qm/qr?k=BwJA4pT_vj_f3OdS7ztwuNzReTxZVCXe";
+		}else if(t>count+overss.length+1){
+			return;
 		}
 		
 		
