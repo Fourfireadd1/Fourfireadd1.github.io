@@ -90,6 +90,7 @@ $(document).ready(function(e) {
 		"我开玩笑的",
 		"既然你这么执着",
 		"加个好友一起玩啊",
+		"都说了用浏览器<br/>这下好了吧<br/>加不上"
 	];
 	/*切换*/
 	$.change=function(){
@@ -102,8 +103,11 @@ $(document).ready(function(e) {
 			addText("哥<br/><span style=\"font-size: 24px;\"><span>既然来了</span><br/><span>回去的时候</span><br/><span>点个赞和关注呗</span><br/><span>这是我第1次求你</span><br/><span>我就不信你能让我求你"+count+"次</span><span>")
 		}else if(t>=count+1&&t<count+overss.length+1){
 			addText(overss[oindex++]);
-		}else if(t==count+overss.length+1){
-			window.open("https://qm.qq.com/cgi-bin/qm/qr?k=BwJA4pT_vj_f3OdS7ztwuNzReTxZVCXe","_blank");
+		}else if(t==count+overss.length){
+			window.location="https://qm.qq.com/cgi-bin/qm/qr?k=BwJA4pT_vj_f3OdS7ztwuNzReTxZVCXe";
+			addText(overss[oindex]);
+		}else if(t>=count+overss.length){
+			
 			return;
 		}
 		
